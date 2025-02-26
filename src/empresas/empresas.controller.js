@@ -1,30 +1,33 @@
 import Empresa from './empresas.model.js';
 
-export const addEmpresa = async (req, res) => {
+export const saveEmpresa = async (req, res) => {
     try {
-        const { name, impactLevel, category, startDate, description, owner } = req.body;
+        const data = req.body;
+        const user = req.usuario;
 
-        const newEmpresa = new Empresa({
-            name,
-            impactLevel,
-            category,
-            startDate,
-            description,
-            owner
+        if (!user) {
+            return res.status(404).json({ 
+                success: false, 
+                message: 'Propietario no encontrado' 
+            });
+        }
+
+        const empresa = new Empresa({
+            ...data,
+            owner: user._id,
         });
 
-        await newEmpresa.save();
+        await empresa.save();
 
-        return res.status(201).json({
+        res.status(200).json({
             success: true,
-            message: "Empresa creada exitosamente",
-            empresa: newEmpresa
+            empresa
         });
-    } catch (err) {
-        return res.status(500).json({
+    } catch (error) {
+        res.status(500).json({
             success: false,
-            message: "Error al crear la empresa",
-            error: err.message
+            message: 'Error al guardar la empresa',
+            error
         });
     }
 };
