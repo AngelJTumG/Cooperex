@@ -17,3 +17,16 @@ export const createEmpresaValidator = [
     validarCampos,
     handleErrors
 ];
+
+export const updateEmpresaValidator = [
+    validateJWT,
+    isAdmin,
+    param("id").custom(empresaExists).withMessage("La empresa no existe"),
+    body("name").optional().isLength({ max: 25 }).withMessage("El nombre no puede exceder los 25 caracteres"),
+    body("impactLevel").optional().isIn(["LOW", "MEDIUM", "HIGH"]).withMessage("El nivel de impacto debe ser uno de los siguientes: LOW, MEDIUM, HIGH"),
+    body("category").optional().isIn(["TECHNOLOGY", "FINANCE", "HEALTH", "EDUCATION", "OTHER"]).withMessage("La categoría debe ser una de las siguientes: TECHNOLOGY, FINANCE, HEALTH, EDUCATION, OTHER"),
+    body("startDate").optional().isDate().withMessage("La fecha de inicio debe ser una fecha válida"),
+    body("description").optional(),
+    validarCampos,
+    handleErrors
+];
