@@ -25,5 +25,16 @@
     "swagger": "^0.7.5",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
-  }
+  },
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelJTumG/Cooperex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AngelJTumG/Cooperex/issues"
+  },
+  "homepage": "https://github.com/AngelJTumG/Cooperex#readme"
 }
