@@ -1,5 +1,5 @@
 import User from '../src/user_admin/admin.model.js';
- 
+
 const createAdmin = async () => {
     try {
         const adminExists = await User.findOne({ role: "ADMIN_ROLE" });
@@ -9,7 +9,7 @@ const createAdmin = async () => {
                 surname: "User",
                 username: "admin",
                 email: "admin@example.com",
-                password: ("adminpassword"), 
+                password: "adminpassword", 
                 phone: "12345678",
                 role: "ADMIN_ROLE"
             };
@@ -22,5 +22,5 @@ const createAdmin = async () => {
         console.error("Error creating admin user or default category:", err);
     }
 };
- 
+
 export default createAdmin;

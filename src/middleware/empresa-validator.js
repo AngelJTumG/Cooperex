@@ -1,7 +1,7 @@
 import { body, param } from "express-validator";
-import { empresaExists, adminExists } from "../helpers/db-validator.js";
+import { empresaExists } from "../helpers/db-validator.js";
 import { validarCampos } from "./validate-fields.js";
-import { handleErrors } from "./handle-errors.js";
+import { handleErrors } from "./handdle-error.js";
 import { validateJWT } from "./validate-jwt.js";
 import { isAdmin } from "./validate-roles.js";
 
@@ -13,7 +13,7 @@ export const createEmpresaValidator = [
     body("category").notEmpty().withMessage("La categoría es requerida").isIn(["TECHNOLOGY", "FINANCE", "HEALTH", "EDUCATION", "OTHER"]).withMessage("La categoría debe ser una de las siguientes: TECHNOLOGY, FINANCE, HEALTH, EDUCATION, OTHER"),
     body("startDate").notEmpty().withMessage("La fecha de inicio es requerida").isDate().withMessage("La fecha de inicio debe ser una fecha válida"),
     body("description").notEmpty().withMessage("La descripción es requerida"),
-    body("owner").notEmpty().withMessage("El propietario es requerido").custom(adminExists),
+    body("owner").notEmpty().withMessage("El propietario es requerido"), 
     validarCampos,
     handleErrors
 ];

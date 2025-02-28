@@ -1,20 +1,12 @@
 import Empresa from './empresas.model.js';
+import { isAdmin } from '../middleware/validate-roles.js';
 
 export const saveEmpresa = async (req, res) => {
     try {
         const data = req.body;
-        const user = req.usuario;
-
-        if (!user) {
-            return res.status(404).json({ 
-                success: false, 
-                message: 'Propietario no encontrado' 
-            });
-        }
 
         const empresa = new Empresa({
             ...data,
-            owner: user._id,
         });
 
         await empresa.save();
@@ -33,7 +25,7 @@ export const saveEmpresa = async (req, res) => {
 };
 
 export const updateEmpresaById = async (req, res) => {
-    if (!isAdmin(req.user)) {
+    if (!isAdmin(req.usuario)) {
         return res.status(403).json({
             success: false,
             message: 'Acceso denegado'
@@ -43,16 +35,16 @@ export const updateEmpresaById = async (req, res) => {
         const { id } = req.params;
         const data = req.body;
         const empresa = await Empresa.findById(id);
- 
+
         if (!empresa) {
             return res.status(404).json({
                 success: false,
                 message: 'Empresa no encontrada'
             });
         }
- 
+
         const updatedEmpresa = await Empresa.findByIdAndUpdate(id, data, { new: true });
- 
+
         res.status(200).json({
             success: true,
             empresa: updatedEmpresa

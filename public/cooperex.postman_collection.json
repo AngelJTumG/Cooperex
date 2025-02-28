@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "b2062914-425b-44f4-88c2-375e5549b93e",
+		"name": "cooperex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38544411"
+	},
+	"item": [
+		{
+			"name": "empresas",
+			"item": [
+				{
+					"name": "Create empresas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMmFhYWM3OTM2MzM4ZTlkYzEzMmQiLCJpYXQiOjE3NDA3MTIxMzIsImV4cCI6MTc0MDcxNTczMn0.DgfTmEisJir-MpsWLSDshrL_NLa_CGS4MbfME5m3Ab0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tech Innovators\",\r\n  \"impactLevel\": \"LOW\",\r\n  \"category\": \"TECHNOLOGY\",\r\n  \"startDate\": \"2014-06-15\",\r\n  \"description\": \"A company focused on innovative tech solutions.\",\r\n  \"owner\": \"angel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/cooperex/v1/empresas/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"cooperex",
+								"v1",
+								"empresas",
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get empresas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2JkMmFhYWM3OTM2MzM4ZTlkYzEzMmQiLCJpYXQiOjE3NDA3MTIxMzIsImV4cCI6MTc0MDcxNTczMn0.DgfTmEisJir-MpsWLSDshrL_NLa_CGS4MbfME5m3Ab0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tech Innovators Updated\",\r\n  \"impactLevel\": \"MEDIUM\",\r\n  \"category\": \"FINANCE\",\r\n  \"startDate\": \"2016-07-20\",\r\n  \"description\": \"An updated description for the company.\",\r\n  \"owner\": \"javier\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/cooperex/v1/empresas/empresas/67c11ab7ae5ce13c36aa254c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"cooperex",
+								"v1",
+								"empresas",
+								"empresas",
+								"67c11ab7ae5ce13c36aa254c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"username\": \"admin\",\r\n  \"password\": \"adminpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/cooperex/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"cooperex",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
