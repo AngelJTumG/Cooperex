@@ -1,8 +1,10 @@
 import { Router } from 'express';
+import express from 'express';
 import { saveEmpresa, updateEmpresaById, getEmpresas } from './empresas.controller.js';
 import { createEmpresaValidator } from '../middleware/empresa-validator.js';
+import { isAdmin } from '../middleware/validate-roles.js';
 
-const router = Router();
+const router = express.Router();
 
 /**
  * @swagger
@@ -91,7 +93,7 @@ router.post('/empresas', createEmpresaValidator, saveEmpresa);
  *       500:
  *         description: Some error happened
  */
-router.put('/empresas/:id', createEmpresaValidator, updateEmpresaById);
+router.put('/empresas/:id', createEmpresaValidator, isAdmin, updateEmpresaById);
 
 /**
  * @swagger

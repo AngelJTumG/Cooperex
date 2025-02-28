@@ -1,4 +1,8 @@
 export const isAdmin = (req, res, next) => {
+    if (!req || !res) {
+        throw new Error("Request or Response object is missing");
+    }
+
     if (!req.usuario) {
         return res.status(500).json({
             success: false,

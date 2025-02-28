@@ -1,5 +1,4 @@
 import Empresa from './empresas.model.js';
-import { isAdmin } from '../middleware/validate-roles.js';
 
 export const saveEmpresa = async (req, res) => {
     try {
@@ -25,7 +24,7 @@ export const saveEmpresa = async (req, res) => {
 };
 
 export const updateEmpresaById = async (req, res) => {
-    if (!isAdmin(req.usuario)) {
+    if (!req.usuario || req.usuario.role !== 'ADMIN_ROLE') {
         return res.status(403).json({
             success: false,
             message: 'Acceso denegado'
@@ -61,9 +60,9 @@ export const updateEmpresaById = async (req, res) => {
 export const getEmpresas = async (req, res) => {
     try {
         const { order = 'asc' } = req.query; 
-        const sortOrder = order === 'desc' ? -1 : 1; 
+        const sortOrder = order.toLowerCase() === 'desc' ? -1 : 1; 
 
-        const empresas = await Empresa.find().sort({ name: sortOrder });
+        const empresas = await Empresa.find().collation({ locale: 'en', strength: 2 }).sort({ name: sortOrder });
 
         res.status(200).json({
             success: true,
