@@ -1,10 +1,9 @@
 import { Router } from 'express';
-import express from 'express';
-import { saveEmpresa, updateEmpresaById, getEmpresas } from './empresas.controller.js';
+import { saveEmpresa, updateEmpresaById, getEmpresas, generateExcelReport } from './empresas.controller.js';
 import { createEmpresaValidator } from '../middleware/empresa-validator.js';
 import { isAdmin } from '../middleware/validate-roles.js';
 
-const router = express.Router();
+const router = Router();
 
 /**
  * @swagger
@@ -112,5 +111,41 @@ router.put('/empresas/:id', createEmpresaValidator, isAdmin, updateEmpresaById);
  *                 $ref: '#/components/schemas/Empresa'
  */
 router.get('/empresas', getEmpresas);
+
+/**
+ * @swagger
+ * /empresas/report:
+ *   get:
+ *     summary: Generar reporte de empresas en Excel
+ *     tags: [Empresas]
+ *     responses:
+ *       200:
+ *         description: Reporte generado exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 message:
+ *                   type: string
+ *                 filePath:
+ *                   type: string
+ *       500:
+ *         description: Error al generar el reporte
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 message:
+ *                   type: string
+ *                 error:
+ *                   type: string
+ */
+router.get('/report', generateExcelReport);
 
 export default router;

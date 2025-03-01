@@ -1,0 +1,171 @@
+[{
+  "_id": {
+    "$oid": "67c11ab7ae5ce13c36aa254c"
+  },
+  "name": "Tech Innovators Updated",
+  "impactLevel": "LOW",
+  "category": "FINANCE",
+  "startDate": {
+    "$date": "2016-07-20T00:00:00.000Z"
+  },
+  "description": "An updated description for the company.",
+  "owner": "Tum",
+  "createdAt": {
+    "$date": "2025-02-28T02:08:55.584Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T00:47:58.268Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c12ab7bdfbd6197f773a39"
+  },
+  "name": "Tech Innovators",
+  "impactLevel": "LOW",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-02-28T03:17:11.458Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T03:17:11.458Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c14a35ac7039c1af170b93"
+  },
+  "name": "ATech Innovators",
+  "impactLevel": "MEDIUM",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-02-28T05:31:33.302Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T05:31:33.302Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c14c0c60763e389a18415a"
+  },
+  "name": "zTech Innovators",
+  "impactLevel": "MEDIUM",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-02-28T05:39:24.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T05:39:24.661Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c14c1060763e389a18415d"
+  },
+  "name": "bTech Innovators",
+  "impactLevel": "MEDIUM",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-02-28T05:39:28.741Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T05:39:28.741Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c258511efa580a75666c01"
+  },
+  "name": "bTech Innovators",
+  "impactLevel": "MEDIUM",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-03-01T00:44:01.456Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T00:44:01.456Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c258681efa580a75666c04"
+  },
+  "name": "SSASA",
+  "impactLevel": "MEDIUM",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-03-01T00:44:24.723Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T00:44:24.723Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c258a61efa580a75666c07"
+  },
+  "name": "AAPPLE",
+  "impactLevel": "HIGH",
+  "category": "TECHNOLOGY",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-03-01T00:45:26.530Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T00:45:26.530Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c258bc1efa580a75666c0a"
+  },
+  "name": "KINAL",
+  "impactLevel": "HIGH",
+  "category": "EDUCATION",
+  "startDate": {
+    "$date": "2014-06-15T00:00:00.000Z"
+  },
+  "description": "A company focused on innovative tech solutions.",
+  "owner": "angel",
+  "createdAt": {
+    "$date": "2025-03-01T00:45:48.534Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T00:45:48.534Z"
+  }
+}]

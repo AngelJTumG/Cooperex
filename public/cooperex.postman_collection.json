@@ -54,7 +54,27 @@
 					"name": "get empresas",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/cooperex/v1/empresas/empresas?order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"cooperex",
+								"v1",
+								"empresas",
+								"empresas"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
 					},
 					"response": []
 				},
@@ -95,6 +115,28 @@
 								"empresas",
 								"empresas",
 								"67c11ab7ae5ce13c36aa254c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report generate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/cooperex/v1/empresas/report",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"cooperex",
+								"v1",
+								"empresas",
+								"report"
 							]
 						}
 					},
